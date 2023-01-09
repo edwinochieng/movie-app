@@ -1,5 +1,10 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { Quicksand } from "@next/font/google";
+
+const quicksand = Quicksand({
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -7,9 +12,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className={quicksand.className}>
       <head />
-      <body className='px-6 md:px-16 bg-gray-900 2xl:max-w-[1280px] w-full'>
+      <body className='px-6 md:px-16 bg-gray-900 w-full'>
         <div className=''>
           <Navbar />
         </div>
