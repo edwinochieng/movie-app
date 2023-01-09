@@ -2,36 +2,67 @@
 import React from "react";
 import Image from "next/image";
 import { BsFillStarFill, BsFillBookmarkHeartFill } from "react-icons/bs";
+import { posterURL } from "../../utils/urls";
 
-export default function MovieCard() {
+export interface Movie {
+  movie: {
+    adult: boolean;
+    id: number;
+    backdrop_path: string;
+    poster_path: string;
+    title: string;
+    overview: string;
+    release_date: string;
+    vote_average: number;
+    original_name: string;
+    first_air_date: string;
+    original_title: string;
+  };
+}
+
+export default function MovieCard({
+  movie: {
+    poster_path,
+    backdrop_path,
+    original_name,
+    title,
+    release_date,
+    vote_average,
+    id,
+    first_air_date,
+    original_title,
+  },
+}: Movie) {
   return (
-    <div className='group max-w-[250px] w-full cursor-pointer ease-in duration-300 transform sm:hover:scale-125 hover:z-50'>
+    <div className='relative inline-block w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] cursor-pointer m-1'>
       <Image
-        src='https://lh6.googleusercontent.com/B0uQRPzgf2AX6EVvlqNWwV7ql2-TbAuWbJcnkHuC_uzEtG0viA6__4_v-bfdas4iM8MqIm8wcoDeaLRxugVFycbVvaelnagmzAsH9-ug-y0X2BxvEjFfhavM_fvWHDEnNKBFamG9=s0'
-        height='200'
-        width='250'
+        src={`${posterURL}${backdrop_path} `}
+        height='100'
+        width='280'
         alt='movie'
+        className='rounded-lg object-cover'
       />
-      <div className='px-2 pb-3 bg-gray-900 shadow opacity-0 ease-in-out duration-100 group-hover:opacity-100'>
-        <h1 className='text-gray-100 font-semibold text-[14px]'>
-          Tom cruise Oblivion
-        </h1>
+      <div className='absolute top-0 left-0 w-full h-full rounded-lg px-2 bg-black/90 opacity-0 ease-in-out duration-100 hover:opacity-100 flex flex-col justify-between'>
+        <div className='pt-2 flex justify-between items-center'>
+          <div className='bg-white flex items-center rounded-xl px-1'>
+            <BsFillStarFill className='text-yellow-400' size={10} />
 
-        <div className='flex justify-between items-center'>
-          <h1 className='text-[13px] text-gray-400 font-semibold'>2022-8-11</h1>
-          <div className='flex items-center'>
-            <div className='bg-black flex items-center h-5 rounded-xl px-1'>
-              <span className='text-yellow-600'>
-                <BsFillStarFill size={9} />
-              </span>
-              <span className='p-1 text-[9px] font-bold text-gray-200'>
-                7.3
-              </span>
-            </div>
-            <div className='pl-2 text-gray-200 cursor-pointer'>
-              <BsFillBookmarkHeartFill size={17} />
-            </div>
+            <span className='p-1 text-[10px] font-bold text-gray-900'>
+              {Number(vote_average).toFixed(1)}
+            </span>
           </div>
+
+          <div className='pl-2 text-gray-200 cursor-pointer'>
+            <BsFillBookmarkHeartFill size={20} />
+          </div>
+        </div>
+        <div className='pb-2'>
+          <h1 className='text-gray-50 font-semibold text-[19px] leading-[20px] truncate'>
+            {title || original_name || original_title}
+          </h1>
+          <h2 className='text-[11px] text-gray-300 font-semibold'>
+            {release_date || first_air_date}
+          </h2>
         </div>
       </div>
     </div>
