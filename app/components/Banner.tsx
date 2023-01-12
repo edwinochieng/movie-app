@@ -3,24 +3,10 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { backdropURL } from "../../utils/urls";
+import { Data, Results } from "../../utils/interfaces";
 
 interface Banner {
-  data: {
-    results: Results[];
-  };
-}
-export interface Results {
-  adult: boolean;
-  id: number;
-  backdrop_path: string;
-  poster_path: string;
-  title: string;
-  overview: string;
-  release_date: string;
-  vote_average: number;
-  original_name: string;
-  first_air_date: string;
-  original_title: string;
+  data: Data;
 }
 
 export default function Banner({ data }: Banner) {

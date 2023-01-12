@@ -3,14 +3,12 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
-import { Movie } from "./MovieCard";
+import { Data } from "../../utils/interfaces";
 
 interface Props {
   title: string;
   sliderID: string;
-  data: {
-    results: Movie[];
-  };
+  data: Data;
 }
 
 export default function Slider({ title, sliderID, data }: Props) {

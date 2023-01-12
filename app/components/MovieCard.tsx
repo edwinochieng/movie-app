@@ -3,26 +3,15 @@ import React from "react";
 import Image from "next/image";
 import { BsFillStarFill, BsFillBookmarkHeartFill } from "react-icons/bs";
 import { posterURL } from "../../utils/urls";
+import { useRouter } from "next/navigation";
+import { Results } from "../../utils/interfaces";
 
-export interface Movie {
-  movie: {
-    adult: boolean;
-    id: number;
-    backdrop_path: string;
-    poster_path: string;
-    title: string;
-    overview: string;
-    release_date: string;
-    vote_average: number;
-    original_name: string;
-    first_air_date: string;
-    original_title: string;
-  };
+interface Movie {
+  movie: Results;
 }
 
 export default function MovieCard({
   movie: {
-    poster_path,
     backdrop_path,
     original_name,
     title,
@@ -33,16 +22,28 @@ export default function MovieCard({
     original_title,
   },
 }: Movie) {
+  const router = useRouter();
+
+  const handleClick = (): void => {
+    if (release_date || title) {
+      router.push(`/movies/${id}`);
+    } else if (first_air_date || original_name) {
+      router.push(`/tvshows/${id}`);
+    }
+  };
   return (
-    <div className='relative inline-block w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] cursor-pointer m-1'>
+    <div
+      className='relative inline-block w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] cursor-pointer m-1'
+      onClick={handleClick}
+    >
       <Image
         src={`${posterURL}${backdrop_path} `}
         height='100'
         width='280'
         alt='movie'
-        className='rounded-lg object-cover'
+        className='rounded object-cover'
       />
-      <div className='absolute top-0 left-0 w-full h-full rounded-lg px-2 bg-black/90 opacity-0 ease-in-out duration-100 hover:opacity-100 flex flex-col justify-between'>
+      <div className='absolute top-0 left-0 w-full h-full rounded px-2 bg-black/90 opacity-0 ease-in-out duration-100 hover:opacity-100 flex flex-col justify-between'>
         <div className='pt-2 flex justify-between items-center'>
           <div className='bg-white flex items-center rounded-xl px-1'>
             <BsFillStarFill className='text-yellow-400' size={10} />

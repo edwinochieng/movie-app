@@ -50,15 +50,10 @@ export default async function Home() {
   ]);
   return (
     <div className='font-bold text-white'>
-      <div className='z-[-10]'>
-        <Banner data={trending} />
-      </div>
-
-      <div className=''>
-        <Slider title='Trending Now' sliderID='1' data={trending} />
-        <Slider title='TV Shows' sliderID='2' data={shows} />
-        <Slider title='Movies' sliderID='3' data={movies} />
-      </div>
+      <Banner data={trending} />
+      <Slider title='Trending Now' sliderID='1' data={trending} />
+      <Slider title='TV Shows' sliderID='2' data={shows} />
+      <Slider title='Movies' sliderID='3' data={movies} />
     </div>
   );
 }
