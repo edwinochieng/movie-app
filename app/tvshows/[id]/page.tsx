@@ -1,5 +1,45 @@
 import React from "react";
+import { baseURL } from "../../../utils/urls";
+import Details from "../../components/Details";
 
-export default function ShowDetails() {
-  return <div>ShowDetails</div>;
+const getTvDetails = async (id: number) => {
+  const res = await fetch(`${baseURL}/tv/${id}?api_key=${process.env.API_KEY}`);
+
+  if (!res.ok) {
+    throw new Error("Data not fetched!");
+  }
+
+  return res.json();
+};
+
+const getTvRecommendations = async (id: number) => {
+  const res = await fetch(
+    `${baseURL}/tv/${id}/recommendations?api_key=${process.env.API_KEY}`
+  );
+
+  if (!res.ok) {
+    throw new Error("Data not fetched!");
+  }
+
+  return res.json();
+};
+
+export default async function ShowDetails({
+  params,
+}: {
+  params: { id: number };
+}) {
+  const tvDetails = await getTvDetails(params.id);
+  const tvRecommendations = await getTvRecommendations(params.id);
+
+  const [details, recommendations] = await Promise.all([
+    tvDetails,
+    tvRecommendations,
+  ]);
+
+  return (
+    <div>
+      <Details data={details} />
+    </div>
+  );
 }
