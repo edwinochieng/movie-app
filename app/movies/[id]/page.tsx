@@ -2,6 +2,7 @@ import React from "react";
 
 import { baseURL } from "../../../utils/urls";
 import Details from "../../components/Details";
+import Slider from "../../components/Slider";
 
 const getMovieDetails = async (id: number) => {
   const res = await fetch(
@@ -45,6 +46,7 @@ export default async function MovieDetails({
   return (
     <div>
       <Details data={details} />
+      <Slider title='You May Also Like' sliderID='1' data={recommendations} />
     </div>
   );
 }
