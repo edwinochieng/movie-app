@@ -16,6 +16,7 @@ export interface Results {
     last_air_date:string
     number_of_seasons:number
     status:string
+    runtime:number
  }
 
 type Genres = {
