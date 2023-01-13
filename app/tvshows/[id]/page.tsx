@@ -3,7 +3,10 @@ import { baseURL } from "../../../utils/urls";
 import Details from "../../components/Details";
 
 const getTvDetails = async (id: number) => {
-  const res = await fetch(`${baseURL}/tv/${id}?api_key=${process.env.API_KEY}`);
+  const res = await fetch(
+    `${baseURL}/tv/${id}?api_key=${process.env.API_KEY}`,
+    { cache: "no-store" }
+  );
 
   if (!res.ok) {
     throw new Error("Data not fetched!");
@@ -14,7 +17,8 @@ const getTvDetails = async (id: number) => {
 
 const getTvRecommendations = async (id: number) => {
   const res = await fetch(
-    `${baseURL}/tv/${id}/recommendations?api_key=${process.env.API_KEY}`
+    `${baseURL}/tv/${id}/recommendations?api_key=${process.env.API_KEY}`,
+    { cache: "no-store" }
   );
 
   if (!res.ok) {

@@ -5,7 +5,8 @@ import Details from "../../components/Details";
 
 const getMovieDetails = async (id: number) => {
   const res = await fetch(
-    `${baseURL}/movie/${id}?api_key=${process.env.API_KEY}`
+    `${baseURL}/movie/${id}?api_key=${process.env.API_KEY}`,
+    { cache: "no-store" }
   );
 
   if (!res.ok) {
@@ -17,7 +18,8 @@ const getMovieDetails = async (id: number) => {
 
 const getMovieRecommendations = async (id: number) => {
   const res = await fetch(
-    `${baseURL}/movie/${id}/recommendations?api_key=${process.env.API_KEY}`
+    `${baseURL}/movie/${id}/recommendations?api_key=${process.env.API_KEY}`,
+    { cache: "no-store" }
   );
 
   if (!res.ok) {
