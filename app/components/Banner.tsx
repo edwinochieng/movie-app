@@ -19,7 +19,7 @@ export default function Banner({ data }: Banner) {
   const movie = movies[Math.floor(Math.random() * movies.length)];
 
   return (
-    <div className='w-full h-[350px] md:h-[550px]'>
+    <div className='w-full h-[450px] md:h-[550px]'>
       <div className='relative w-full h-full '>
         <div className='absolute w-full h-full bg-gradient-to-r from-black' />
         <Image
@@ -29,7 +29,7 @@ export default function Banner({ data }: Banner) {
           alt={movie?.title || movie?.original_name}
           className='object-cover h-full'
         />
-        <div className='absolute top-[30%] p-4 md:p-8'>
+        <div className='absolute top-[17%] lg:top-[30%] p-4 md:p-8'>
           <h1 className='text-3xl md:text-6xl font-bold'>
             {movie?.title || movie?.original_name || movie?.original_title}
           </h1>

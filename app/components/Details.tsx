@@ -33,7 +33,7 @@ export default function Details({
   },
 }: Details) {
   return (
-    <div className='w-full h-[350px] md:h-[70vh]'>
+    <div className='w-full h-[85vh] sm:h-[75vh]'>
       <div className='relative w-full h-full '>
         <div className='absolute w-full h-full bg-gradient-to-r from-black' />
         <Image
@@ -43,8 +43,8 @@ export default function Details({
           alt={title || original_name || original_title}
           className='h-full'
         />
-        <div className='absolute top-[20%] px-4 md:px-12 flex'>
-          <div className='w-[300px]'>
+        <div className='absolute top-[5%] md:top-[15%] px-4 md:px-12 flex flex-col lg:flex-row'>
+          <div className='w-[180px] lg:w-[300px] pb-2'>
             <Image
               src={`${posterURL}${poster_path}`}
               height='300'
@@ -53,8 +53,8 @@ export default function Details({
               className='rounded-lg'
             />
           </div>
-          <div className='pl-6'>
-            <h1 className='text-3xl md:text-6xl font-bold text-white'>
+          <div className='lg:pl-6'>
+            <h1 className='text-3xl md:text-4xl lg:text-6xl font-bold text-white'>
               {title || original_name || original_title}
             </h1>
             <div className='flex font-medium text-gray-300 text-sm'>
@@ -74,7 +74,7 @@ export default function Details({
                 </div>
               )}
             </div>
-            <div className='flex'>
+            <div className='flex flex-wrap w-full max-w-[90%] md:max-w-[80%] lg:max-w-[65%]'>
               {genres.map((genre) => (
                 <div
                   key={genre.id}
@@ -94,7 +94,7 @@ export default function Details({
               {status && <span className='ml-2'>Status: {status}</span>}
             </div>
             <div className='py-1'>
-              <p className='w-full md:max-w-[70%] lg:max-w-[50%] text-gray-200 font-semibold text-sm'>
+              <p className='w-full max-w-[90%] md:max-w-[80%] lg:max-w-[60%] text-gray-200 font-semibold text-sm'>
                 {overview}
               </p>
             </div>
