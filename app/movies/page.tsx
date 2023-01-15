@@ -4,7 +4,8 @@ import { baseURL } from "../../utils/urls";
 
 const getTrendingMovies = async () => {
   const res = await fetch(
-    `${baseURL}/trending/movie/day?api_key=${process.env.API_KEY}`
+    `${baseURL}/trending/movie/day?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
@@ -16,7 +17,8 @@ const getTrendingMovies = async () => {
 
 const getPopularMovies = async () => {
   const res = await fetch(
-    `${baseURL}/movie/popular?api_key=${process.env.API_KEY}`
+    `${baseURL}/movie/popular?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
@@ -27,7 +29,8 @@ const getPopularMovies = async () => {
 };
 const getTopRatedMovies = async () => {
   const res = await fetch(
-    `${baseURL}/movie/top_rated?api_key=${process.env.API_KEY}`
+    `${baseURL}/movie/top_rated?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
@@ -39,7 +42,8 @@ const getTopRatedMovies = async () => {
 
 const getNowPlaying = async () => {
   const res = await fetch(
-    `${baseURL}/movie/now_playing?api_key=${process.env.API_KEY}`
+    `${baseURL}/movie/now_playing?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {

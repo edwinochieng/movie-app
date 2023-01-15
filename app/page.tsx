@@ -4,7 +4,8 @@ import Banner from "./components/Banner";
 
 const getTrending = async () => {
   const res = await fetch(
-    `${baseURL}/trending/all/day?api_key=${process.env.API_KEY}`
+    `${baseURL}/trending/all/day?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
@@ -16,7 +17,8 @@ const getTrending = async () => {
 
 const getPopularMovies = async () => {
   const res = await fetch(
-    `${baseURL}/movie/popular?api_key=${process.env.API_KEY}`
+    `${baseURL}/movie/popular?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
@@ -28,7 +30,8 @@ const getPopularMovies = async () => {
 
 const getPopularShows = async () => {
   const res = await fetch(
-    `${baseURL}/tv/popular?api_key=${process.env.API_KEY}`
+    `${baseURL}/tv/popular?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {

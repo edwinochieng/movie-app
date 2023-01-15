@@ -5,7 +5,8 @@ import { baseURL } from "../../utils/urls";
 
 const getTrendingShows = async () => {
   const res = await fetch(
-    `${baseURL}/trending/tv/day?api_key=${process.env.API_KEY}`
+    `${baseURL}/trending/tv/day?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
@@ -17,7 +18,8 @@ const getTrendingShows = async () => {
 
 const getPopularShows = async () => {
   const res = await fetch(
-    `${baseURL}/tv/popular?api_key=${process.env.API_KEY}`
+    `${baseURL}/tv/popular?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
@@ -28,7 +30,8 @@ const getPopularShows = async () => {
 };
 const getTopRatedShows = async () => {
   const res = await fetch(
-    `${baseURL}/tv/top_rated?api_key=${process.env.API_KEY}`
+    `${baseURL}/tv/top_rated?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
@@ -40,7 +43,8 @@ const getTopRatedShows = async () => {
 
 const getAiringToday = async () => {
   const res = await fetch(
-    `${baseURL}/tv/airing_today?api_key=${process.env.API_KEY}`
+    `${baseURL}/tv/airing_today?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 30 } }
   );
 
   if (!res.ok) {
