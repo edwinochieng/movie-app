@@ -29,7 +29,7 @@ export default async function Search() {
         </h1>
         <div className='pt-3 flex flex-wrap justify-center gap-3'>
           {data?.results?.slice(0, 14).map((movie: Results) => (
-            <SearchedResults key={movie.id} movie={movie} />
+            <SearchedResults key={movie.id} data={movie} />
           ))}
         </div>
       </div>
