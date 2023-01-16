@@ -11,12 +11,15 @@ export interface Results {
     original_name: string;
     first_air_date: string;
     original_title: string;
-    genres: Genres[]
-    video:boolean
-    last_air_date:string
-    number_of_seasons:number
-    status:string
-    runtime:number
+    genres: Genres[];
+    video:boolean;
+    last_air_date:string;
+    number_of_seasons:number;
+    status:string;
+    runtime:number;
+    profile_path:string;
+    name:string
+
  }
 
 type Genres = {
