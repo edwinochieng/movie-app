@@ -98,14 +98,9 @@ export default function Details({
                 {overview}
               </p>
             </div>
-            <div className='flex pt-3'>
-              <button className='rounded bg-white max-w-[100px] w-full py-1 px-2 font-medium text-cyan-600 flex items-center'>
-                <BsFillPlayFill size={32} />
-                Trailer
-              </button>
-              <div className='ml-2 px-2 flex bg-black/80 items-center rounded cursor-pointer'>
-                <BsBookmarkStarFill className='text-gray-600' size={24} />
-              </div>
+
+            <div className='mt-1 max-w-[35px] py-1 px-2 flex bg-black/80 items-center rounded cursor-pointer'>
+              <BsBookmarkStarFill className='text-gray-600' size={24} />
             </div>
           </div>
         </div>
