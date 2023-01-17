@@ -5,6 +5,6 @@ module.exports = {
     appDir: true,
   },
   images: {
-    domains: ["image.tmdb.org"],
+    domains: ["image.tmdb.org","media.cheggcdn.com"],
   },
 };
