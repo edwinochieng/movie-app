@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { BsFillStarFill, BsFillBookmarkHeartFill } from "react-icons/bs";
-import { posterURL } from "../../utils/urls";
+import { alternativeImage, posterURL } from "../../utils/urls";
 import { useRouter } from "next/navigation";
 import { Results } from "../../utils/interfaces";
 
@@ -37,11 +37,11 @@ export default function MovieCard({
       onClick={handleClick}
     >
       <Image
-        src={`${posterURL}${backdrop_path} `}
-        height='100'
+        src={backdrop_path ? `${posterURL}${backdrop_path} ` : alternativeImage}
+        height='200'
         width='280'
         alt='movie'
-        className='rounded object-cover'
+        className='rounded h-[100px] sm:h-[150px]'
       />
       <div className='absolute top-0 left-0 w-full h-full rounded px-2 bg-black/90 opacity-0 ease-in-out duration-100 hover:opacity-100 flex flex-col justify-between'>
         <div className='pt-2 flex justify-between items-center'>

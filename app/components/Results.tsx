@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Results } from "../../utils/interfaces";
-import { posterURL } from "../../utils/urls";
+import { posterURL, alternativeImage } from "../../utils/urls";
 
 interface SearchResults {
   data: Results;
@@ -39,11 +39,15 @@ export default function SearchedResults({
       onClick={handleClick}
     >
       <Image
-        src={`${posterURL}${poster_path || profile_path}`}
+        src={
+          poster_path || profile_path
+            ? `${posterURL}${poster_path || profile_path}`
+            : alternativeImage
+        }
         height='300'
         width='300'
         alt={original_name || title}
-        className='rounded-lg'
+        className='rounded-lg h-full'
       />
     </div>
   );
