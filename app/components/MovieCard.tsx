@@ -41,7 +41,7 @@ export default function MovieCard({
         height='200'
         width='280'
         alt='movie'
-        className='rounded h-[100px] sm:h-[150px]'
+        className='rounded h-[100px] sm:h-[160px]'
       />
       <div className='absolute top-0 left-0 w-full h-full rounded px-2 bg-black/90 opacity-0 ease-in-out duration-100 hover:opacity-100 flex flex-col justify-between'>
         <div className='pt-2 flex justify-between items-center'>

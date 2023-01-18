@@ -50,7 +50,7 @@ export default function Details({
               height='300'
               width='300'
               alt={title || original_name}
-              className='rounded-lg'
+              className='rounded-lg h-full'
             />
           </div>
           <div className='lg:pl-6'>
