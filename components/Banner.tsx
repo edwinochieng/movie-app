@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { backdropURL } from "../../utils/urls";
-import { Data, Results } from "../../utils/interfaces";
+import { backdropURL } from "../utils/urls";
+import { Data, Results } from "../utils/interfaces";
 
 interface Banner {
   data: Data;

@@ -3,7 +3,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
-import { Data } from "../../utils/interfaces";
+import { Data } from "../utils/interfaces";
 
 interface Props {
   title: string;

@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { Results } from "../../utils/interfaces";
-import { posterURL, alternativeImage } from "../../utils/urls";
+import { Results } from "../utils/interfaces";
+import { posterURL, alternativeImage } from "../utils/urls";
 
 interface SearchResults {
   data: Results;

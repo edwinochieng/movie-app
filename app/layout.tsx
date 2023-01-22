@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 import { Quicksand } from "@next/font/google";
 
 const quicksand = Quicksand({

@@ -2,9 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import { BsFillStarFill, BsFillBookmarkHeartFill } from "react-icons/bs";
-import { alternativeImage, posterURL } from "../../utils/urls";
+import { alternativeImage, posterURL } from "../utils/urls";
 import { useRouter } from "next/navigation";
-import { Results } from "../../utils/interfaces";
+import { Results } from "../utils/interfaces";
 
 interface Movie {
   movie: Results;

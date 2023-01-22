@@ -1,6 +1,6 @@
-import Slider from "./components/Slider";
+import Slider from "../components/Slider";
 import { baseURL } from "../utils/urls";
-import Banner from "./components/Banner";
+import Banner from "../components/Banner";
 
 const getTrending = async () => {
   const res = await fetch(

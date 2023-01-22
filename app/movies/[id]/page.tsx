@@ -1,8 +1,8 @@
 import React from "react";
 
 import { baseURL } from "../../../utils/urls";
-import Details from "../../components/Details";
-import Slider from "../../components/Slider";
+import Details from "../../../components/Details";
+import Slider from "../../../components/Slider";
 
 const getMovieDetails = async (id: number) => {
   const res = await fetch(

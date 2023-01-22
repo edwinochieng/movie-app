@@ -2,14 +2,10 @@
 
 import Image from "next/image";
 import React from "react";
-import {
-  BsFillStarFill,
-  BsFillPlayFill,
-  BsBookmarkStarFill,
-} from "react-icons/bs";
+import { BsFillStarFill, BsBookmarkStarFill } from "react-icons/bs";
 import { BiTimeFive } from "react-icons/bi";
-import { Results } from "../../utils/interfaces";
-import { backdropURL, posterURL } from "../../utils/urls";
+import { Results } from "../utils/interfaces";
+import { backdropURL, posterURL } from "../utils/urls";
 
 interface Details {
   data: Results;

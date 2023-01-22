@@ -1,7 +1,7 @@
 import React from "react";
 import { baseURL } from "../../utils/urls";
-import SearchBar from "../components/Search";
-import SearchedResults from "../components/Results";
+import SearchBar from "../../components/Search";
+import SearchedResults from "../../components/Results";
 import { Results } from "../../utils/interfaces";
 
 const getTrending = async () => {

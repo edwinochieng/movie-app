@@ -1,7 +1,7 @@
 import React from "react";
 import { Results } from "../../../utils/interfaces";
 import { baseURL } from "../../../utils/urls";
-import SearchedResults from "../../components/Results";
+import SearchedResults from "../../../components/Results";
 
 const getSearched = async (query: string) => {
   const res = await fetch(
