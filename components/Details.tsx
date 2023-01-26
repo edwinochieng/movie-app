@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { BsFillStarFill, BsBookmarkStarFill } from "react-icons/bs";
+import { BsFillStarFill } from "react-icons/bs";
 import { BiTimeFive } from "react-icons/bi";
 import { Results } from "../utils/interfaces";
 import { backdropURL, posterURL } from "../utils/urls";
@@ -93,10 +93,6 @@ export default function Details({
               <p className='w-full max-w-[90%] md:max-w-[80%] lg:max-w-[60%] text-gray-200 font-semibold text-sm'>
                 {overview}
               </p>
-            </div>
-
-            <div className='mt-1 max-w-[35px] py-1 px-2 flex bg-black/80 items-center rounded cursor-pointer'>
-              <BsBookmarkStarFill className='text-gray-600' size={24} />
             </div>
           </div>
         </div>

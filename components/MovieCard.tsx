@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { BsFillStarFill, BsFillBookmarkHeartFill } from "react-icons/bs";
+import { BsFillStarFill } from "react-icons/bs";
 import { alternativeImage, posterURL } from "../utils/urls";
 import { useRouter } from "next/navigation";
 import { Results } from "../utils/interfaces";
@@ -51,10 +51,6 @@ export default function MovieCard({
             <span className='p-1 text-[10px] font-bold text-gray-900'>
               {Number(vote_average).toFixed(1)}
             </span>
-          </div>
-
-          <div className='pl-2 text-gray-200 cursor-pointer'>
-            <BsFillBookmarkHeartFill size={20} />
           </div>
         </div>
         <div className='pb-2'>
