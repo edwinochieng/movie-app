@@ -3,7 +3,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
-import { Data } from "../utils/interfaces";
+import { Data, Results } from "../utils/interfaces";
 
 interface Props {
   title: string;
@@ -36,7 +36,7 @@ export default function Slider({ title, sliderID, data }: Props) {
           id={"slider" + sliderID}
           className='h-full w-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'
         >
-          {data?.results?.map((movie: any) => (
+          {data?.results?.map((movie: Results) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>

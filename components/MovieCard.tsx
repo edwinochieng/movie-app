@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { BsFillStarFill } from "react-icons/bs";
-import { alternativeImage, posterURL } from "../utils/urls";
+import { alternativeImage, backdropURL } from "../utils/urls";
 import { useRouter } from "next/navigation";
 import { Results } from "../utils/interfaces";
 
@@ -37,18 +37,19 @@ export default function MovieCard({
       onClick={handleClick}
     >
       <Image
-        src={backdrop_path ? `${posterURL}${backdrop_path} ` : alternativeImage}
+        src={
+          backdrop_path ? `${backdropURL}${backdrop_path} ` : alternativeImage
+        }
         height='200'
         width='280'
-        alt='movie'
+        alt={title || original_name}
         className='rounded h-[100px] sm:h-[160px]'
       />
       <div className='absolute top-0 left-0 w-full h-full rounded px-2 bg-black/90 opacity-0 ease-in-out duration-100 hover:opacity-100 flex flex-col justify-between'>
         <div className='pt-2 flex justify-between items-center'>
-          <div className='bg-white flex items-center rounded-xl px-1'>
-            <BsFillStarFill className='text-yellow-400' size={10} />
-
-            <span className='p-1 text-[10px] font-bold text-gray-900'>
+          <div className='bg-black flex items-center rounded-lg px-1.5 text-sm'>
+            <BsFillStarFill className='text-yellow-400 text-xs' />
+            <span className='pl-1 font-bold text-white'>
               {Number(vote_average).toFixed(1)}
             </span>
           </div>
