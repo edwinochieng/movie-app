@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang='en' className={quicksand.className}>
       <head />
-      <body className='px-4 md:px-6 lg:px-16 bg-gray-900 w-full'>
+      <body className='px-4 md:px-6 lg:px-16 bg-gray-900 max-w-[1920px] w-full'>
         <div className=''>
           <Navbar />
         </div>
