@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Introduction.
 
-## Getting Started
 
-First, run the development server:
+Click [here](https://movie-app-edwin.vercel.app/) to check out the live demo.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![movie-app-1](https://user-images.githubusercontent.com/105020682/214938581-4bde310d-32da-4cf1-a9d8-6b4daa154f77.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Next.js 13
+- TypeScript
+- Tailwind CSS
+- TMDB API
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Other packages used : react-icons, tailwind-scrollbar-hide
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
+- List movies and shows
+- Search movies, shows and actors
+- Movie details page
+- Movie and Tv Show recommendations
+- Fully responsive
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the project.
+2. Clone the project
+3. Navigate to the project directory
+4. Run `npm install` to install dependencies.
+5. Run `npm run dev` to start the project in your localhost.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Future updates
+- Implement any changes made to Next.js 13's app directory(beta).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
