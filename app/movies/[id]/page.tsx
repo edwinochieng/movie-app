@@ -46,7 +46,9 @@ export default async function MovieDetails({
   return (
     <div>
       <Details data={details} />
-      <Slider title='You May Also Like' sliderID='1' data={recommendations} />
+      {recommendations.results.length > 0 && (
+        <Slider title='You May Also Like' sliderID='1' data={recommendations} />
+      )}
     </div>
   );
 }
