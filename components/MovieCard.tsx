@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { BsFillStarFill } from "react-icons/bs";
-import { alternativeImage, backdropURL } from "../utils/urls";
+import { alternativeImage, posterURL } from "../utils/urls";
 import { useRouter } from "next/navigation";
 import { Results } from "../utils/interfaces";
 
@@ -20,6 +20,7 @@ export default function MovieCard({
     id,
     first_air_date,
     original_title,
+    poster_path,
   },
 }: Movie) {
   const router = useRouter();
@@ -33,17 +34,15 @@ export default function MovieCard({
   };
   return (
     <div
-      className='relative inline-block w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] cursor-pointer m-1'
+      className='relative inline-block w-[155px] cursor-pointer m-1'
       onClick={handleClick}
     >
       <Image
-        src={
-          backdrop_path ? `${backdropURL}${backdrop_path} ` : alternativeImage
-        }
-        height='200'
-        width='280'
-        alt={title || original_name}
-        className='rounded h-[100px] sm:h-[160px]'
+        src={backdrop_path ? `${posterURL}${poster_path} ` : alternativeImage}
+        height='300'
+        width='300'
+        alt={title || original_name || original_title || "movie"}
+        className='rounded-lg h-full'
       />
       <div className='absolute top-0 left-0 w-full h-full rounded px-2 bg-black/90 opacity-0 ease-in-out duration-100 hover:opacity-100 flex flex-col justify-between'>
         <div className='pt-2 flex justify-between items-center'>
