@@ -32,9 +32,6 @@ export default function Navbar() {
           <li className='p-4 hover:text-gray-500'>
             <Link href='/tvshows'>TV Shows</Link>
           </li>
-          <li className='p-4 hover:text-gray-500'>
-            <Link href='/watchlist'>Watch List</Link>
-          </li>
         </ul>
 
         <ul className='flex'>
@@ -64,9 +61,6 @@ export default function Navbar() {
               </li>
               <li className='pt-3' onClick={handleNav}>
                 <Link href='/tvshows'>TV Shows</Link>
-              </li>
-              <li className='pt-3' onClick={handleNav}>
-                <Link href='/watchlist'>Watch List</Link>
               </li>
             </ul>
           </div>
