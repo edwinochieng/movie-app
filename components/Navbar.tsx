@@ -36,12 +36,13 @@ export default function Navbar() {
 
         <ul className='flex'>
           <li className='hidden sm:block p-4 hover:text-gray-600'>
-            <Link href='/search'>
-              <BsSearch size={20} />
+            <Link
+              href='/search'
+              className='flex flex-row items-center space-x-2'
+            >
+              <BsSearch size={18} />
+              <span>Search</span>
             </Link>
-          </li>
-          <li className='py-4 pl-6 hover:text-gray-600'>
-            <RxAvatar size={26} />
           </li>
         </ul>
 
