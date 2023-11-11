@@ -14,7 +14,7 @@ export default function Banner({ data }: Banner) {
 
   useEffect(() => {
     setMovies(data.results);
-  }, []);
+  }, [data.results]);
 
   const movie = movies[Math.floor(Math.random() * movies.length)];
 
@@ -23,7 +23,7 @@ export default function Banner({ data }: Banner) {
       <div className='relative w-full h-full '>
         <div className='absolute w-full h-full bg-gradient-to-r from-black' />
         <Image
-          src={`${backdropURL}${movie?.backdrop_path}`}
+          src={`${backdropURL}/${movie?.backdrop_path}`}
           height='600'
           width='1920'
           alt={movie?.title || movie?.original_name}

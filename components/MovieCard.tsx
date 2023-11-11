@@ -38,7 +38,7 @@ export default function MovieCard({
       onClick={handleClick}
     >
       <Image
-        src={backdrop_path ? `${posterURL}${poster_path} ` : alternativeImage}
+        src={backdrop_path ? `${posterURL}/${poster_path} ` : alternativeImage}
         height='300'
         width='300'
         alt={title || original_name || original_title || "movie"}
