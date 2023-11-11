@@ -2,6 +2,8 @@ import React from "react";
 import { baseURL } from "../../../utils/urls";
 import Details from "../../../components/Details";
 import Slider from "../../../components/Slider";
+import type { Metadata, ResolvingMetadata } from "next";
+
 const getTvDetails = async (id: number) => {
   const res = await fetch(
     `${baseURL}/tv/${id}?api_key=${process.env.API_KEY}`,
@@ -27,6 +29,19 @@ const getTvRecommendations = async (id: number) => {
 
   return res.json();
 };
+
+export async function generateMetadata(
+  { params }: { params: { id: number } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const id = params.id;
+
+  const tvDetails = await getTvDetails(id);
+
+  return {
+    title: tvDetails.title,
+  };
+}
 
 export default async function ShowDetails({
   params,

@@ -2,6 +2,11 @@ import React from "react";
 
 import Slider from "../../components/Slider";
 import { baseURL } from "../../utils/urls";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "TV Shows",
+};
 
 const getTrendingShows = async () => {
   const res = await fetch(
