@@ -27,7 +27,7 @@ export default function MovieCard({ movie }: Movie) {
       onClick={handleClick}
     >
       <Image
-        src={`${backdropURL}/${movie?.backdrop_path!} `}
+        src={`${posterURL}/${movie?.poster_path!}`}
         height='300'
         width='300'
         alt={
