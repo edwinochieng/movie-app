@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { BsFillStarFill } from "react-icons/bs";
-import { alternativeImage, posterURL } from "../utils/urls";
+import { alternativeImage, posterURL, backdropURL } from "../utils/urls";
 import { useRouter } from "next/navigation";
 import { Results } from "../utils/interfaces";
 
@@ -28,11 +28,7 @@ export default function MovieCard({ movie }: Movie) {
     >
       {displayBackdrop ? (
         <Image
-          src={
-            movie?.poster_path
-              ? `${posterURL}/${movie?.poster_path} `
-              : alternativeImage
-          }
+          src={`${backdropURL}/${movie?.backdrop_path} `}
           height='300'
           width='300'
           alt={
