@@ -20,26 +20,24 @@ export default function MovieCard({ movie }: Movie) {
       router.push(`/tvshows/${movie?.id}`);
     }
   };
-  const displayBackdrop = movie !== undefined;
+
   return (
     <div
       className='relative inline-block w-[155px] cursor-pointer m-1'
       onClick={handleClick}
     >
-      {displayBackdrop ? (
-        <Image
-          src={`${backdropURL}/${movie?.backdrop_path} `}
-          height='300'
-          width='300'
-          alt={
-            movie?.title ||
-            movie?.original_name ||
-            movie?.original_title ||
-            "movie"
-          }
-          className='rounded-lg h-full'
-        />
-      ) : undefined}
+      <Image
+        src={`${backdropURL}/${movie?.backdrop_path!} `}
+        height='300'
+        width='300'
+        alt={
+          movie?.title ||
+          movie?.original_name ||
+          movie?.original_title ||
+          "movie"
+        }
+        className='rounded-lg h-full'
+      />
 
       <div className='absolute top-0 left-0 w-full h-full rounded px-2 bg-black/90 opacity-0 ease-in-out duration-100 hover:opacity-100 flex flex-col justify-between'>
         <div className='pt-2 flex justify-between items-center'>
